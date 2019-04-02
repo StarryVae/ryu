@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<script src="jquery-3.1.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<link href="css/design.css" rel="stylesheet" type="text/css">
+<link href="css/dashboard.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  jQuery("#b1").click(function(){
+
+       var dpid = $("#dpid").val();
+       var url = "http://192.168.1.31:8080/flow/" + dpid;
+       jQuery.ajax({
+           async:false,
+           type: "GET",
+           url: url,
+           dataType:"json",
+           success:function(body)
+                   {
+
+                         var arr = $("#table tr");
+
+                         var table = $("#table");
+
+                         for(var i=1;i<arr.length;i++)
+                         {
+　　                              table.removeChild(arr[i]);
+
+                         }
+
+				                 for(var i=0;i<body.length;i++)
+					               {
+					                   var tr = "<tr><td>"+body[i][0]+"</td> <td>"+body[i][1]+"</td> <td>"+body[i][2]+"</td> </tr>";
+
+                             $("#table").append(tr);
+                          
+                        }
+				 }
+
+          });
+
+    });
+});
+
+
+
+
+</script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Flow table Client</a>
+        </div>
+
+      </div>
+    </nav>
+
+
+<div class="body slide">
+        <aside class="sidebar show perfectScrollbar">
+                <div id="solso-sidebar">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading1">
+                                <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                                <i class="fa fa-cog"></i> Mininet
+                                                <i class="pull-right fa fa-caret-down"></i>
+
+                                        </a>
+                                </h4>
+                        </div>
+
+                        <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+                                <div>
+                                        <a href="http://192.168.1.31:8080/index_tips.html" class="list-group-item">tips</a>
+                                        <a href="http://192.168.1.31:8080/index_inquery.html" class="list-group-item solso-active">inquery</a>
+                                        <a href="http://192.168.1.31:8080/index_flow.html" class="list-group-item">LimitBW</a>
+                                </div>
+                        </div>
+                </div>
+
+
+                <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading2">
+                                <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                                <i class="fa fa-address-card"></i> OpenStack
+                                                <i class="pull-right fa fa-caret-down"></i>
+                                        </a>
+                                </h4>
+                        </div>
+
+                        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                                <div>
+                                        <a href="http://192.168.1.31:8080/index_openstack.html" class="list-group-item">LimitBW_openstack</a>
+                                </div>
+                        </div>
+                </div>
+
+
+        </div>
+</div>  </aside>
+
+</div>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+<table id="table1" border="1" style="margin:50px auto;">
+     <tr>
+           <th>dpid</th> <td align="left"> <input type="text" name="dpid" id="dpid" > </td>
+     </tr>
+</table>
+
+<button type="submit" id = "b1" style="color:blue;font-size:18px;font-family:arial;height:30px;width:70px;margin-left:520px;">submit</button>
+
+<br /><br />
+
+<table id="table" border="1" style="margin:20px auto;">
+     <tr>
+           <td align="center"> in_port </td>
+           <td align="center"> dst_mac </td>
+          <td align="center"> out_port </td>
+     </tr>
+
+</table>
+
+</div>
+
+</body>
+</html>

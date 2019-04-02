@@ -1,0 +1,33 @@
+ #tab{
+   margin:10px;
+   padding:20px;
+   position:absolute;
+   left:300px;
+   top:150px
+}
+#tab ul{
+     list-style:none;
+     height:36px;
+     border-bottom:1px solid #ccc ;
+     display:block;
+}
+#tab ul li{
+     float:left;
+     display:inline-block;
+     padding:0px 15px;
+     height:34px;
+     line-height:34px;
+     margin-right:5px;
+     cursor:pointer;
+}
+ #tab div{
+     padding:5px;
+            
+}
+#tab ul li.on{
+	border:1px solid #ccc;
+    border-bottom: 2px solid white;
+}
+.hide{
+    display:none;
+}

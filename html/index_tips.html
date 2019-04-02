@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	 <link href="css/design.css" rel="stylesheet" type="text/css">
+	 <link href="css/dashboard.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    
+  </head>
+  
+  <body>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Flow table Client</a>
+        </div>
+
+      </div>
+    </nav> 
+
+<div class="body slide">
+	<aside class="sidebar show perfectScrollbar">
+		<div id="solso-sidebar">
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="heading1">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+						<i class="fa fa-cog"></i> Mininet
+						<i class="pull-right fa fa-caret-down"></i>
+
+					</a>
+				</h4>
+			</div>
+			
+			<div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+				<div>
+					<a href="http://192.168.1.31:8080/index_tips.html" class="list-group-item solso-active">tips</a>
+                                        <a href="http://192.168.1.31:8080/index_inquery.html" class="list-group-item">inquery</a>
+					<a href="http://192.168.1.31:8080/index_flow.html" class="list-group-item">LimitBW</a>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="heading2">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+						<i class="fa fa-address-card"></i> OpenStack
+						<i class="pull-right fa fa-caret-down"></i>
+
+					</a>
+				</h4>
+			</div>
+			
+			<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+				<div>
+					<a href="http://192.168.1.31:8080/index_openstack.html" class="list-group-item">LimitBW_openstack</a>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</div>	</aside>
+
+</div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<p style="font-size:25px;text-align:center;margin:30px auto">
+The INQUERY is to acquire the link status. <br /><br />
+The LIMITBW is to set the flow entry to limit the bandwidth.<br/><br/>
+The LIMITBW_openstack is to set the flow entry to limit the bandwidth in the OpenStack.
+</p>
+</div>
+
+</body>
+</html>
